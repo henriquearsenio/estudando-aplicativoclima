@@ -10,10 +10,10 @@ botaoBusca.addEventListener("click", () => {
         .then(dados => {
             const temperatura = dados.main.temp;
             const descricao = dados.weather[0].description;
-            const nascerSol = dados.weather[0].sunrise;
-            const porSol = dados.weather[0].sunset;
+            // const nascerSol = dados.weather[0].sunrise;
+            // const porSol = dados.weather[0].sunset;
 
-            infoClima.innerHTML = `Temperatura: ${temperatura}°C<br>Descrição: ${descricao}<br>Nascer do Sol: ${nascerSol}<br>Pôr do Sol: ${porSol}`;
+            infoClima.innerHTML = `Temperatura: ${temperatura}°C<br>Descrição: ${descricao}`;
         })
         .catch(erro => {
             console.error('Erro ao buscar dados do clima:', erro);
