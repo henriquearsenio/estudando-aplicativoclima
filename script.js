@@ -5,7 +5,7 @@ const infoClima = document.getElementById('infoClima');
 botaoBusca.addEventListener("click", () => {
     const cidade = entradaCidade.value;
     if (cidade) {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=50e11cf755f74af11dedb5adcdd065f9&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=50e11cf755f74af11dedb5adcdd065f9&units=metric&lang=pt_br`)
         .then(resposta => resposta.json())
         .then(dados => {
             const temperatura = dados.main.temp;
