@@ -10,10 +10,10 @@ botaoBusca.addEventListener("click", () => {
             .then(dados => {
                 const temperatura = dados.main.temp;
                 const descricao = dados.weather[0].description;
-                // const nascerSol = dados.weather[0].sunrise;
-                // const porSol = dados.weather[0].sunset;
 
-                infoClima.innerHTML = `Temperatura: ${temperatura}°C<br>Descrição: ${descricao}`;
+                infoClima.innerHTML = `O clima agora em ${cidade},${dados.sys.country} é de ${temperatura}°C, ${descricao}.`;
+                entradaCidade.value = "";
+                entradaCidade.focus();
             })
             .catch(erro => {
                 console.error('Erro ao buscar dados do clima:', erro);
@@ -21,3 +21,9 @@ botaoBusca.addEventListener("click", () => {
             })
     }
 })
+
+entradaCidade.addEventListener("keyup", function (event) {
+    if (event.key === "Enter") {
+        botaoBusca.click();
+    }
+});
